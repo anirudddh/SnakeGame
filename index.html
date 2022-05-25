@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game by Aniruddh</title>
+</head>
+<style>
+    body{
+        background: url("snakegamebg.jpg");
+        display: flex;
+        background-size: contain;
+        justify-content: center;
+        align-content: center;
+    }
+    .mainContent{
+        width: 500px;
+        height: 400px;
+        margin-top: 2em;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        padding: 80px 20px 20px;
+    }
+    #Score{
+        color: white;
+        font-size: 20px;
+        font-family: "Kristen ITC";
+    }
+    #Level {
+        color: white;
+        font-size: 20px;
+        font-family: "Kristen ITC";
+    }
+    #head{
+        color: white;
+        font-family: "Kristen ITC";
+    }
+    #subt{
+        color: white;
+        font-family: "Kristen ITC";
+        display: flex;
+        margin-top: -10px;
+        justify-content: center;
+    }
+    .heading{
+        height: 100px;
+        width: 540px;
+        background: black;
+        display: flex;
+        justify-content: center;
+    }
+    .buttonLeft{
+        margin-left: 200px;
+        position: absolute;
+        margin-top: -25px;
+        height: 50px;
+        width: 50px;
+        background: black;
+    }
+    .buttonRight{
+        margin-left: 300px;
+        margin-top: -25px;
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        background: black;
+        transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+    }
+    .buttonTop{
+        margin-left: 250px;
+        margin-top: -50px;
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        background: black;
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+    }
+    .buttonBottom{
+        margin-left: 250px;
+        margin-top: 0px;
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        background: black;
+        transform: rotate(270deg);
+        -webkit-transform: rotate(270deg);
+    }
+    #status{
+        height: 50px;
+        width: 300px;
+        background: black;
+        display: flex;
+        justify-content: center;
+        color: white;
+        font-family: "Kristen ITC";
+    }
+    @media  {
+      
+
+.footer {
+  height: 50px;
+  background-color: var(--main-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: light-grey;
+  flex-direction: column;
+}
+
+.footer a {
+  color: light-grey;
+  }  
+    }
+</style>
+<body><div>
+    <div class = "heading" onplay="typeWriter()">
+        <div>
+        <div>
+            <h1 id = "head"></h1>
+        </div>
+        <div>
+            <h5 id = "subt"><a href="https://linktr.ee/Anirudddh" > On PC use Arrow - Keys</a></h5>
+        </div>
+        </div>
+    </div>
+<div class= "mainContent">
+    <div>
+<canvas class="canvas" height="300" width="300" style="background-color: forestgreen"></canvas>
+    <div style="display: flex; flex-flow: row; width: 300px;justify-content: space-between">
+    <div id="Score"></div>
+    <div id="Level"></div>
+    </div>
+        <div id = "status"></div>
+</div>
+</div>
+    <div>
+        <div class = "buttonLeft">
+            <img src="arrow-left.png" id = "1" height="50px" width="50px">
+        </div>
+        <div class = "buttonRight">
+            <img src="arrow-left.png" id ="2" height="50px" width="50px">
+        </div>
+        <div class = "buttonTop">
+            <img src="arrow-left.png" id="3" height="50px" width="50px">
+        </div>
+        <div class = "buttonBottom">
+            <img src="arrow-left.png" id="4" height="50px" width="50px">
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var i = 0;
+    var txt = 'The Snake Game by Aniruddh';
+    var speed = 100;
+
+    function typeWriter() {
+        if (i < txt.length) {
+            document.getElementById("head").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        }
+    }
+    typeWriter();
+</script>
+<script type="text/javascript" src="snake.js"></script>
+<script type="text/javascript" src="snakes.js"></script>
+
+</html>
